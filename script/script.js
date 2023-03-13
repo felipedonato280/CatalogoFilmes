@@ -1,49 +1,44 @@
-class Ator{
-    constructor(id, nome){
-        this.id = id;
-        this.nome = nome;
+let inputBuscarFilme = document.querySelector("#input-buscar-filme")
+let btnBuscarFilme = document.querySelector("#btn-buscar-filme")
+
+console.log(btnBuscarFilme.innerHTML)
+
+let listarFilmes = async (filmes) => {
+    let listaFilmes = await document.querySelector("#lista-filmes")
+    listaFilmes.innerHTML = ""
+    console.log(listaFilmes)
+    if(filmes.length > 0){
+        filmes.forEach(async(filme) => {
+            listaFilmes.appendChild(await filme.getCard())
+        })
     }
 }
 
-// let ator = new Ator(1,"Neal");
-
-// console.log(ator);
-
-class Diretor{
-    constructor(id, nome){
-        this.id = id;
-        this.nome = nome;
+btnBuscarFilme.onclick = () => {
+    if(inputBuscarFilme.value.length > 0){
+        let filmes =  new Array()
+        fetch("http://www.omdbapi.com/?apikey=21779dab&s="+inputBuscarFilme.value)
+        .then((resp) => resp.json())
+        .then((resp)=> {
+            resp.Search.forEach((item) => {
+                console.log(item)
+                let filme=new Filme(
+                    item.imdbId,
+                    item.Title,
+                    item.Year,
+                    null,
+                    null,
+                    item.Poster,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                )
+                filmes.push(filme)
+            })
+            listarFilmes(filmes)
+        })
     }
+    return false
 }
-
-class Filme{
-    constructor(id, titulo, ano, genero, duração, sinopse, cartaz, direção, elenco, classificação, avaliação){
-        this.id = id;
-        this.titulo = titulo;
-        this.ano = ano;
-        this.genero = genero;
-        this.duração = duração;
-        this.sinopse = sinopse;
-        this.cartaz = cartaz;
-        this.direção = direção;
-        this.elenco = elenco;
-        this.classificação = classificação;
-        this.avaliação = avaliação;
-    }
-}
-
-let filme = new Filme(
-    1,
-    "Matrix",
-    1999,
-    "Ação e Ficção",
-    1.36,
-    "sinopse",
-    "https://pt.wikipedia.org/wiki/Ficheiro:The_Matrix_Poster.jpg",
-    "direção",
-    "elenco",
-    14,
-    8.8
-);
-
-console.log(filme);
