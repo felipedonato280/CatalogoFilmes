@@ -68,10 +68,17 @@ getCard = async () => {
         this.btnDetalhes = document.createElement('button');
         this.btnDetalhes.appendChild(document.createTextNode("Detalhes"));
         this.btnDetalhes.setAttribute("id", this.id);
-        this.btnDetalhes.setAttribute("class", "btnDetalhesFilme");
+        this.btnDetalhes.setAttribute("class", "btn btn-primary");
     }
 
     getBtnDetalhes = () =>{
         return this.btnDetalhes;
     }
+
+    // getAbaDetalhes = async () => {
+    //     let AbaDetalhes = document.createElement("div");
+    //     AbaDetalhes.setAttribute("class", "AbaDetalhes");
+    
+    //     return this.AbaDetalhes;
+    // }
 }

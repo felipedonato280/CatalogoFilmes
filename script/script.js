@@ -21,7 +21,7 @@ let detalhesFilme = async (id) =>{
     .then((resp) => resp.json())
     .then((resp) => {
 
-        console.log(resp);
+        // console.log(resp);
         let filme= new Filme(
             resp.imdbID,
             resp.Title,

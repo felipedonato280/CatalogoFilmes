@@ -5,7 +5,7 @@
 
 #lista-filmes{
     display: flex;
-    justify-content: start;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 2rem;
     width: 100%;
@@ -23,4 +23,8 @@
 
 .card-body{
     font-size: 1rem;
+}
+
+.AbaDetalhes{
+    background-color: aqua;
 }
