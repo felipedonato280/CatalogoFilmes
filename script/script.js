@@ -1,6 +1,5 @@
 let inputBuscarFilme = document.querySelector("#input-buscar-filme")
 let btnBuscarFilme = document.querySelector("#btn-buscar-filme")
-let btnDetalhes = document.querySelector("#btn btn-primary");
 
 btnBuscarFilme.onclick = () => {
     if(inputBuscarFilme.value.length > 0){
@@ -36,8 +35,8 @@ let listarFilmes = async (filmes) => {
     listaFilmes.style.display="flex";
     listaFilmes.innerHTML = "";
     // console.log(listaFilmes);
-    // document.querySelector("#mostrar-filme").innerHTML="";
-    // document.querySelector("#mostrar-filme").style.display="none";
+    document.querySelector("#mostrar-filmes").innerHTML="";
+    document.querySelector("#mostrar-filmes").style.display="none";
     if(filmes.length > 0){
         filmes.forEach(async(filme) => {
             // console.log(filme);
@@ -67,9 +66,9 @@ let detalhesFilme = async (id) =>{
             resp.Awards,
             resp.imdbRating
         )
-        
-        // document.querySelector("#mostrar-filme").appendChild(filme.getDetalhesFilme());
-        // document.querySelector("#lista-filme").style.display="none";
-        // document.querySelector("#mostrar-filme").style.display="flex";
+        detalhesFilme.onclick = () =>{
+            document.querySelector("#lista-filmes").style.display="none";
+            document.querySelector("#mostrar-filmes").style.display="none";
+        }
     });
 }

@@ -25,7 +25,7 @@ class Filme {
         this.elenco = elenco;
         this.classificacao = classificacao;
         this.avaliacao = avaliacao;
-        this.btnDetalhes = btnDetalhes;
+        this.btnDetalhes = null;
     }
 
 getCard = async () => {
