@@ -25,7 +25,7 @@ class Filme {
         this.elenco = elenco;
         this.classificacao = classificacao;
         this.avaliacao = avaliacao;
-        this.btnDetalhes = null;
+        this.btnDetalhes = btnDetalhes;
     }
 
 getCard = async () => {
@@ -74,11 +74,4 @@ getCard = async () => {
     getBtnDetalhes = () =>{
         return this.btnDetalhes;
     }
-
-    // getAbaDetalhes = async () => {
-    //     let AbaDetalhes = document.createElement("div");
-    //     AbaDetalhes.setAttribute("class", "AbaDetalhes");
-    
-    //     return this.AbaDetalhes;
-    // }
 }
