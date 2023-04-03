@@ -99,6 +99,10 @@ getCard = async () => {
         btnfechar.setAttribute("class","btn-close");
         btnfechar.setAttribute("id","btn-fechar");
 
+        let btnsalvar = document.createElement("button");
+        btnsalvar.setAttribute("class","bi bi-heart");
+        btnsalvar.setAttribute("id","btn-salvar");
+
         let titledetalhes = document.createElement("h5");
         titledetalhes.setAttribute("class","card-title");
         titledetalhes.appendChild(document.createTextNode(this.titulo));
@@ -149,6 +153,7 @@ getCard = async () => {
         bodydetalhes.appendChild(anodetalhes);
         bodydetalhes.appendChild(curacaodetalhes);
         bodydetalhes.appendChild(avaliacaodetalhes);
+        bodydetalhes.appendChild(btnsalvar);
 
 
         return detalhesFilme;

@@ -40,3 +40,8 @@
     margin-top: 16vh;
     border: 2px solid #000;
 }
+
+#btn-salvar{
+    border: none;
+    background-color: #fff;
+}
