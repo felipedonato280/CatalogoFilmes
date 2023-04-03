@@ -11,16 +11,32 @@
     width: 100%;
 }
 
-.card{
+.cardd{
     width: 15rem;
-    height: 28rem;
+    height: 30rem;
     margin: 1rem;
 }
 
-.card img{
+.cardd img{
     height: 20rem;
+    width: 100%;
 }
 
-.card-body{
+.cardd-title{
+    text-align: center;
+    font-size: 15px;
+}
+
+.p-ano-producao{
+    text-align: center;
+}
+
+.cardd-body{
     font-size: 1rem;
+    display: grid;
+}
+
+#mostrar-filmes{
+    margin-top: 16vh;
+    border: 2px solid #000;
 }
