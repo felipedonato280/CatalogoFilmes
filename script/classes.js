@@ -40,20 +40,12 @@ getCard = async () => {
     hCardTitle.setAttribute("class", "card-title , cardd-title");
     let divDetalhes = document.createElement("div");
     divDetalhes.setAttribute("style","display:flex; justify-content:space-around;");
-    // let divGenero = document.createElement("div");
-    // divGenero.setAttribute("style", "flex-grow:1;");
     let divAnoProducao = document.createElement("div");
     divAnoProducao.setAttribute("class", "p-ano-producao");
     divAnoProducao.setAttribute("style", "flex-grow:1;");
-    // let divClassificacao = document.createElement("div");
-    // divClassificacao.setAttribute("style", "flex-grow:1;");
     hCardTitle.appendChild(document.createTextNode(this.titulo));
-    // divGenero.appendChild(document.createTextNode(this.genero));
     divAnoProducao.appendChild(document.createTextNode(this.ano));
-    // divClassificacao.appendChild(document.createTextNode(this.classificacao));
-    // divDetalhes.appendChild(divGenero);
     divDetalhes.appendChild(divAnoProducao);
-    // divDetalhes.appendChild(divClassificacao);
     card.appendChild(imgCartaz);
     card.appendChild(cardBody);
     cardBody.appendChild(hCardTitle);
@@ -80,7 +72,6 @@ getCard = async () => {
 
         let detalhesFilme = document.createElement("div");
         detalhesFilme.setAttribute("class", "row g-0");
-        // detalhesFilme.setAttribute("style", "display:flex; justify-content:space-around;");
 
         let divimgdetalhes = document.createElement("div");
         divimgdetalhes.setAttribute("class","col-md-4");
@@ -102,6 +93,10 @@ getCard = async () => {
         let btnsalvar = document.createElement("button");
         btnsalvar.setAttribute("class","bi bi-heart");
         btnsalvar.setAttribute("id","btn-salvar");
+
+        let desfavoritar = document.createElement("button");
+        desfavoritar.setAttribute("class","bi bi-heart-fill");
+        desfavoritar.setAttribute("id","btn-desfavoritar");
 
         let titledetalhes = document.createElement("h5");
         titledetalhes.setAttribute("class","card-title");
@@ -155,7 +150,7 @@ getCard = async () => {
         bodydetalhes.appendChild(avaliacaodetalhes);
         bodydetalhes.appendChild(btnsalvar);
 
-
         return detalhesFilme;
     }
+
 }
