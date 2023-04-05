@@ -47,7 +47,6 @@ let listarFilmes = async (filmes) => {
                 detalhesFilme(filme.id);
                 document.querySelector("#mostrar-filmes").style.display="flex";
                 document.querySelector("#lista-filmes").style.display="none";
-                document.querySelector("#btnremover").style.display="none";
             }
         });
     }
